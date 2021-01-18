@@ -86,7 +86,7 @@ export const signUp = async variables =>
     variables,
   });
 
-export const updateUser = async (variables, token) =>
+  export const updateUser = async (variables, token) =>
   axios.post(
     API_URL,
     {
@@ -107,7 +107,7 @@ export const updateUser = async (variables, token) =>
         }
       : null,
   );
-
+  
 export const deleteUser = async (variables, token) =>
   axios.post(
     API_URL,

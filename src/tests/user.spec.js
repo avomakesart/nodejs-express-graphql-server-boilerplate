@@ -115,7 +115,7 @@ describe('users', () => {
       } = await userApi.signUp({
         username: 'avo',
         email: 'avo@gmail.com',
-        password: 'avo123yeah',
+        password: 'Limalimon1',
       });
 
       const {
@@ -178,7 +178,7 @@ describe('users', () => {
 
       const {
         data: { errors },
-      } = await userApi.deleteUser({ id: '1' }, token);
+      } = await userApi.deleteUser({ id: '2' }, token);
 
       expect(errors[0].message).to.eql('Not authorized as admin.');
     });
@@ -188,7 +188,7 @@ describe('users', () => {
     it('returns an error because only authenticated users can update a user', async () => {
       const {
         data: { errors },
-      } = await userApi.updateUser({ username: 'jessiebe' });
+      } = await userApi.updateUser({ username: 'avo' });
 
       expect(errors[0].message).to.eql('Not authenticated as user.');
     });
